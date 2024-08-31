@@ -1,0 +1,24 @@
+# .github/workflows/ci.yml
+name: Testes Unitarios
+
+on: [push, pull_request]
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Verificação do Repositorio
+        uses: actions/checkout@v4.1.7
+
+      - name: Configurando Node.Js
+        uses: actions/setup-node@v4.0.3
+        with:
+          node-version: '20'
+
+      - name: Instalando Dependencias
+        run: npm install
+        
+      - name: Executando Testes
+        run: npm run test -- --project=material-ui --watch=false --no-progress --browsers=ChromeHeadless
+
