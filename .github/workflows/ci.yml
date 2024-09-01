@@ -25,5 +25,5 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_ORG: ${{ vars.GH_ORG }}
           GH_PROJECT_ID: ${{ vars.GH_PROJECT_ID }}
-          NODE_PORT: ${{ vars.NODE_PORT }}
+          NODE_PORT: 3000
 
