@@ -14,14 +14,9 @@ jobs:
       - name: Verificação de Envs
         run: |
           echo "GH_TOKEN=${{ secrets.GH_TOKEN }}"
-          echo "GH_ORG=${{ vars.GH_ORG }}"
-          echo "GH_PROJECT_ID=${{ vars.GH_PROJECT_ID }}"
-          echo "NODE_PORT=${{ vars.NODE_PORT }}"
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GH_ORG: ${{ vars.GH_ORG }}
-          GH_PROJECT_ID: ${{ vars.GH_PROJECT_ID }}
-          NODE_PORT: ${{ vars.NODE_PORT }}
+          echo "GH_ORG=${{ env.GH_ORG }}"
+          echo "GH_PROJECT_ID=${{ env.GH_PROJECT_ID }}"
+          echo "NODE_PORT=${{ env.NODE_PORT }}"
 
       - name: Configurando Node.Js
         uses: actions/setup-node@v4.0.3
