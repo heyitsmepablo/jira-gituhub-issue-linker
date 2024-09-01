@@ -80,7 +80,7 @@ export default  {
                   projectNumber: parseInt(projectId),
                   itemCount: itemCount, 
                   headers: {
-                    authorization: `token ${process.env["GITHUB_TOKEN"]}`,
+                    authorization: `token ${process.env["GH_TOKEN"]}`,
                   },
                 }
               );

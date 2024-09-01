@@ -9,7 +9,7 @@ export default {
   get: async (req, res) => {
     try {
       //@ts-ignore
-      const gitHubData = await gitHubHelpers.getProjectItems(process.env.GITHUB_ORG, process.env.GITHUB_PROJECT_ID,100);
+      const gitHubData = await gitHubHelpers.getProjectItems(process.env.GH_ORG, process.env.GH_PROJECT_ID,100);
 
       console.log(gitHubData);
 
