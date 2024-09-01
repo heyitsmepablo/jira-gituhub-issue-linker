@@ -1,12 +1,13 @@
 import { Router } from "express";
-import octokit from "@octokit/rest";
+
+import githubController from "../controllers/github.controller.js";
+
 const router = Router();
 
 /**
  * @param {import ("express").Request} req
  * @param {import ("express").Response} res
  */
-router.get('/cards', (req, res) => {
-    const ocktokit = new octokit({auth: process.env["GITHUB_TOKEN"]});
+router.get('/project/:idProject/items', githubController.get)
 
-})
+export default router
