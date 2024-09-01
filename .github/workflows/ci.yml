@@ -6,7 +6,7 @@ on: [push, pull_request]
 jobs:
   CI:
     runs-on: ubuntu-latest
-
+    enviroment: Development
     steps:
       - name: Verificação do Repositorio
         uses: actions/checkout@v4.1.7
@@ -21,4 +21,9 @@ jobs:
         
       - name: Executando Testes
         run: npm run test -- --project=material-ui --watch=false --no-progress --browsers=ChromeHeadless
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_ORG: ${{ vars.GH_ORG }}
+          GH_PROJECT_ID: ${{ vars.GH_PROJECT_ID }}
+          NODE_PORT: ${{ vars.NODE_PORT }}
 
