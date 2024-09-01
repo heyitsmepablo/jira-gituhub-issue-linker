@@ -6,7 +6,7 @@ on: [push, pull_request]
 jobs:
   CI:
     runs-on: ubuntu-latest
-    enviroment: Development
+    environment: Development
     steps:
       - name: Verificação do Repositorio
         uses: actions/checkout@v4.1.7
