@@ -1,4 +1,4 @@
-import gitHubHelpers from "../helpers/gitHub.helpers.js";
+import gitHubHelpers from "../helpers/github.helpers.js";
 
 export default {
   /**
@@ -16,8 +16,33 @@ export default {
       return res.json(gitHubData);
       
     } catch (/**@type {any} */ error) {
+
       console.log(error.response.data);
+      
       return res.json(error);
     }
   },
+
+
+  /**
+   * 
+   * @param {import ("express").Request} req 
+   * @param {import ("express").Response} res 
+   * 
+   */
+
+  create: async (req, res) => {
+    try {
+      // const response = await gitHubHelpers.createIssueInProject(
+      //   req.body.repoName
+      //   req.body.title,
+      //   req.body.body,
+      //   req.body.assignee
+      // );
+    } catch (error) {
+      console.log(error);
+      return res.json(error);
+    }
+  },
+
 };

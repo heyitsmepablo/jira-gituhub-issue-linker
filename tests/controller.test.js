@@ -5,7 +5,7 @@ import { response } from 'express'
 
 try {
     
-    describe('Testes GitHub API',()=>{
+    describe('GET /github/project/:idProject/items ',()=>{
 
         it('Deve retornar status 200',async ()=>{
 
@@ -50,7 +50,13 @@ try {
                 })
               }))
         })
-        
+
+        describe('POST /webhook/github',()=>{
+
+        })
+        describe('POST /webhook/jira',()=>{
+
+        })
     })      
         
 } catch (error) {
